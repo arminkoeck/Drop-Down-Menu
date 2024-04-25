@@ -1,0 +1,95 @@
+
+:root {
+    --dropdown-menu-horizontal-padding: 20px;
+    --dropdown-vertical-padding: 10px;
+    --menu-vertical-padding: 20px;
+    
+    --menu-hover-color: purple;
+    --dropdown-color: lightblue;
+    --dropdown-hover-color: pink;
+
+    --menu-font-color: black;
+    --menu-hover-font-color: white;
+    --dropdown-font-color: black;
+    --dropdown-hover-font-color: white;
+
+    --menu-dropdown-min-width: 80px;
+}
+
+.menu-container a {
+    text-decoration: none;
+}
+
+.menu-container ul, li {
+    list-style-type: none;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-container > ul {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+.menu-container .dropdown ul {
+    position: absolute;
+    margin-left: calc(0px - var(--dropdown-menu-horizontal-padding));
+    margin-top: var(--menu-vertical-padding);
+    margin-right: 20px;
+    background-color: var(--dropdown-color);
+    box-shadow: 2px 2px 8px -3px rgb(0, 0, 0, 0.4);
+}
+
+.dropdown a {
+    padding: var(--dropdown-vertical-padding) var(--dropdown-menu-horizontal-padding);
+    color: var(--dropdown-font-color);
+    display: inline-block;
+    word-wrap: break-word;
+}
+
+
+.dropdown li:hover a {
+    color: var(--dropdown-hover-font-color);
+}
+
+.dropdown li {
+    padding: var(--dropdown-vertical-padding) 0;
+}
+
+.dropdown li:hover {
+    background-color: var(--dropdown-hover-color);
+}
+
+
+.hidden > * {
+    display: none;
+}
+
+
+.dropdown {
+    padding: var(--menu-vertical-padding) var(--dropdown-menu-horizontal-padding);
+    min-width: var(--menu-dropdown-min-width);
+    color: var(--menu-font-color)
+}
+
+.dropdown:hover, .dropdown:not(.hidden), .dropdown:hover > a,  .dropdown:not(.hidden) > a {
+    color: var(--menu-hover-font-color);
+}
+
+.dropdown:hover, .dropdown:not(.hidden) {
+    background-color: var(--menu-hover-color);
+}
+
+.dropdown > a{
+ padding: 0;
+ margin: 0;
+}
+
+
+/*
+.menu-container on nav element
+.dropdown on ul element of dropdown list
+structure: nav (.menu-container) > ul > li > ul (.dropdown) > li
+*/
