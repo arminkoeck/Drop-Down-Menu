@@ -1,7 +1,7 @@
 
 :root {
     --dropdown-menu-horizontal-padding: 20px;
-    --dropdown-vertical-padding: 10px;
+    --dropdown-vertical-padding: 20px;
     --menu-vertical-padding: 20px;
     
     --menu-hover-color: purple;
@@ -43,8 +43,9 @@
 }
 
 .dropdown a {
-    padding: var(--dropdown-vertical-padding) var(--dropdown-menu-horizontal-padding);
     color: var(--dropdown-font-color);
+    padding: var(--dropdown-vertical-padding) var(--dropdown-menu-horizontal-padding);
+    width: calc(100% - (var(--dropdown-menu-horizontal-padding)*2));
     display: inline-block;
     word-wrap: break-word;
 }
@@ -52,10 +53,6 @@
 
 .dropdown li:hover a {
     color: var(--dropdown-hover-font-color);
-}
-
-.dropdown li {
-    padding: var(--dropdown-vertical-padding) 0;
 }
 
 .dropdown li:hover {
